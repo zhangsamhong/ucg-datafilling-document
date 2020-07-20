@@ -1,0 +1,10 @@
+dist/*
+dist_test/*
+node_modules/*
+src/data/*
+src/fonts/*
+src/images/*
+src/plugins/*
+src/styles/*
+src/templates/*
+src/modules/tinymceLineheight.min.js

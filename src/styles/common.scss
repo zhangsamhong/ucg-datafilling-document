@@ -1,0 +1,48 @@
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import './variables.scss';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    color: $main-font-color;
+}
+
+.container {
+    width: 100%;
+
+    .show-area {
+        box-sizing: border-box;
+        padding: 15px;
+        background-color: $show-area-bg-color;
+    }
+
+    .show-img {
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .08);
+    }
+
+    .content-block {
+        margin-top: 40px;
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .desc {
+            font-size: 14px;
+            color: $sub-font-color;
+            line-height: 1.8;
+
+            .important {
+                color: $import-font-color;
+            }
+        }
+    }
+}
