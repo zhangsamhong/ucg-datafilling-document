@@ -60,6 +60,7 @@
                                         :class="{'hide': child.hide}">
                                         <div class="item">
                                             <el-link
+                                                :class="{'brand-font-color': checkCurrentMenu(child.route)}"
                                                 :underline="false"
                                                 @click="goToRoute(child.route)">
                                                 {{ child.name }}
@@ -94,7 +95,8 @@ export default {
             menuWidth: 300,
             searchHeight: 0,
             searchKey: null,
-            menus: []
+            menus: [],
+            currentRoute: ''
         };
     },
     computed: {},
@@ -112,7 +114,11 @@ export default {
         if (this.$refs.searchInput) {
             this.searchHeight = this.$refs.searchInput.offsetHeight;
         }
-        console.log(this.$route);
+
+        // 监听路由
+        this.$router.afterEach((to, from) => {
+            this.currentRoute = to.path || '';
+        });
     },
     methods: {
         /**
@@ -186,6 +192,16 @@ export default {
                     });
                 }
             }
+        },
+        /**
+         * 检查当前路由是否匹配菜单
+         * @param: menu{String}
+         * @return: Boolean
+         * @auther: 张盛鸿
+         * @date: 2020-07-20 15:37:22
+         */
+        checkCurrentMenu (route = '') {
+            return this.currentRoute === route;
         }
     }
 };
@@ -196,6 +212,12 @@ export default {
 
     .main-container {
         height: 100%;
+
+        $brand-color: #409EFF;
+
+        .brand-font-color {
+            color: $brand-color;
+        }
 
         .el-header {
             box-sizing: border-box;
