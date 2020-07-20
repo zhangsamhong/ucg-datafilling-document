@@ -54,7 +54,9 @@ const config = {
 
 module.exports = mode => {
     if (mode && mode === 'production') {
-        return merge(config, require(`${confPath}webpack.prod.js`));
+        let mergeConfigs = [config, require(`${confPath}webpack.prod.js`)];
+        if (process.env.NODE_ENV === 'document') mergeConfigs.push(require(`${confPath}webpack.doc.js`));
+        return merge(...mergeConfigs);
     }
     return merge(config, require(`${confPath}webpack.dev.js`));
 };
