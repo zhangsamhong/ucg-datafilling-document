@@ -1,28 +1,28 @@
 <template>
-   <div class="container">
-       <p>我是Index</p>
-   </div>
+    <div class="container">
+        <p>我是Index</p>
+    </div>
 </template>
 
 <script>
 export default {
-   name: 'Index',
-   props: {},
-   computed: {},
-   data () {
-       return {
-       };
-   },
-   components: {},
-   watch: {},
-   methods: {},
-   created () {
-   },
-   mounted () {
-   }
-}
+    name: 'Index',
+    components: {},
+    props: {},
+    data () {
+        return {
+        };
+    },
+    computed: {},
+    watch: {},
+    created () {
+    },
+    mounted () {
+    },
+    methods: {}
+};
 </script>
 
 <style lang="scss" scoped>
-   
+
 </style>

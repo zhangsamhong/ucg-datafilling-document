@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: 'DirectoryStructure',
+    name: 'DirectoryStructure1',
     components: {},
     props: {},
     data () {
